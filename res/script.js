@@ -32,7 +32,7 @@ function generatePassword() {
 
     // This prompts the user for a password length and will loop until a valid value is entered
     var passwordLength = prompt("Choose a length between 8-128 (inclusive).");
-    while(passwordLength < 8 || passwordLength > 128) {
+    while(passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
       passwordLength = prompt("Choose a length between 8-128 (inclusive).");
     }
     var output = "";
