@@ -21,6 +21,22 @@ function generatePassword() {
     validCharacters += specialCharacters;
   }
 
+  if(validCharacters.length > 0) {
+    var passwordLength = prompt("Choose a length between 8-128 (inclusive).");
+    while(passwordLength < 8 || passwordLength > 128) {
+      passwordLength = prompt("Choose a length between 8-128 (inclusive).");
+    }
+    var output = "";
+
+    for(var i = 0; i < passwordLength; i++) {
+      output += validCharacters.charAt(Math.random() * validCharacters.length);
+    }
+
+    return output;
+  } else {
+    alert("Choose at least one character type option.");
+  }
+
   return "";
 }
 
